@@ -78,7 +78,7 @@ function dibujar(juego) {
         estado = juego.previo
     }
 
-    $elemento.src = './image/estado-arlequin/0' + estado + '.png'
+    $elemento.src = './image/estado-elfo/0' + estado + '.png'
 
     //creamos las letras adivinadas
     let palabra = juego.palabra
