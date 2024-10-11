@@ -63,7 +63,7 @@ let juego = null
 let finalizado = false
 
 let $html = {
-    personaje: document.getElementById('arlequin-juego'),
+    personaje: document.getElementById('elfo-juego'),
     adivinado: document.querySelector('.contenedor-acertadas'),
     errado: document.querySelector('.contenedor-erradas')
 }

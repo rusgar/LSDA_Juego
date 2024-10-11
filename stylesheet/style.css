@@ -402,9 +402,10 @@ footer p:nth-child(5) {
     opacity: 0.7;
 }
 
-.arlequin {
+.elfo {
     position: relative;
     width: 170px;
+    margin-top: -20px;
 }
 
 .card2 {
@@ -416,10 +417,10 @@ footer p:nth-child(5) {
     opacity: 0.7;
 }
 
-.hechicero {
+.mago {
     position: relative;
-    width: 180px;
-    margin-top: -10px;
+    width: 200px;
+    margin-top: -5px;
 }
 
 .card3 {
@@ -431,10 +432,11 @@ footer p:nth-child(5) {
     opacity: 0.7;
 }
 
-.caballero {
+.orco {
     position: relative;
-    width: 175px;
-    margin-top: -24px;
+    width: 255px;
+    right: 25px;
+    margin-top: -8px;
 }
 
 .contenedor-botones {
@@ -648,10 +650,10 @@ footer p:nth-child(5) {
     margin: -85px -360px;
 }
 
-#arlequin-juego {
+#elfo-juego {
     position: absolute;
-    width: 240px;
-    margin: 0 -315px;
+    width: 235px;
+    margin: 0 -335px;
 }
 
 .contenedor-item4 {
@@ -679,7 +681,7 @@ footer p:nth-child(5) {
     vertical-align: middle;
     font-size: 24px;
     font-family: 'Didact Gothic', sans-serif;
-    color: #232A35;
+    color: #35232e;
     text-transform: uppercase;
 }
 
