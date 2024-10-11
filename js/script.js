@@ -15,6 +15,11 @@ function value() {
     input.value = "";
 }
 
+function seleccionarPersonaje(personaje) {
+    personajeSeleccionado = personaje; // Actualiza la variable global
+    localStorage.setItem('personajeSeleccionado', personaje); // Guarda la selección en localStorage
+    alert(`Tu aventura comieza con el ${personaje}`); // Mensaje opcional para el usuario
+}
 function agregar_palabra() {
     let input = document.getElementById('input-texto').value;
     
@@ -68,55 +73,66 @@ let $html = {
     errado: document.querySelector('.contenedor-erradas')
 }
 
-function dibujar(juego) {
-    //actualizar la imagen del personaje
-    let $elemento
-    $elemento = $html.personaje
-    let estado = juego.estado
+// Variables globales
+let personajeSeleccionado = localStorage.getItem('personajeSeleccionado') || 'ELFO'; // Valor por defecto
 
+function dibujar(juego) {
+    // Actualizar la imagen del personaje según el personaje seleccionado
+    let $elemento = $html.personaje;
+    let estado = juego.estado;
+
+    // Controlar el estado del personaje
     if (estado === 8) {
-        estado = juego.previo
+        estado = juego.previo;
     }
 
-    $elemento.src = './image/estado-elfo/0' + estado + '.png'
+    // Cambiar la ruta de la imagen según el personaje
+    if (personajeSeleccionado === 'ELFO') {
+        $elemento.src = './image/estado-elfo/0' + estado + '.png';
+    } else if (personajeSeleccionado === 'MAGO') {
+        $elemento.src = './image/estado-mago/0' + estado + '.png'; // Cambia según la estructura de tus imágenes
+    } else if (personajeSeleccionado === 'ORCO') {
+        $elemento.src = './image/estado-orco/0' + estado + '.png'; // Cambia según la estructura de tus imágenes
+    }
 
-    //creamos las letras adivinadas
-    let palabra = juego.palabra
-    let adivinado = juego.adivinado
-    $elemento = $html.adivinado
+    // Creamos las letras adivinadas
+    let palabra = juego.palabra;
+    let adivinado = juego.adivinado;
+    $elemento = $html.adivinado;
 
-    //borramos los elementos anteriores
-    $elemento.innerHTML = ''
+    // Borramos los elementos anteriores
+    $elemento.innerHTML = '';
 
     for (let letra of palabra) {
-        let $span = document.createElement('span')
-        let $texto = document.createTextNode('')
+        let $span = document.createElement('span');
+        let $texto = document.createTextNode('');
 
         if (adivinado.indexOf(letra) >= 0) {
-            $texto.nodeValue = letra
+            $texto.nodeValue = letra;
         }
 
-        $span.setAttribute('class', 'span-acertado')
-        $span.appendChild($texto)
-        $elemento.appendChild($span)
+        $span.setAttribute('class', 'span-acertado');
+        $span.appendChild($texto);
+        $elemento.appendChild($span);
     }
 
-    //creamos las letras erradas
-    let errado = juego.errado
-    $elemento = $html.errado
+    // Creamos las letras erradas
+    let errado = juego.errado;
+    $elemento = $html.errado;
 
-    //borramos los elementos anteriores
-    $elemento.innerHTML = ''
+    // Borramos los elementos anteriores
+    $elemento.innerHTML = '';
 
     for (let letra of errado) {
-        let $span = document.createElement('span')
-        let $texto = document.createTextNode(letra)
+        let $span = document.createElement('span');
+        let $texto = document.createTextNode(letra);
 
-        $span.setAttribute('class', 'span-errado')
-        $span.appendChild($texto)
-        $elemento.appendChild($span)
+        $span.setAttribute('class', 'span-errado');
+        $span.appendChild($texto);
+        $elemento.appendChild($span);
     }
 }
+
 
 function adivinar(juego, letra) {
     let estado = juego.estado
