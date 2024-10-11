@@ -18,7 +18,7 @@ function value() {
 function seleccionarPersonaje(personaje) {
     personajeSeleccionado = personaje; // Actualiza la variable global
     localStorage.setItem('personajeSeleccionado', personaje); // Guarda la selección en localStorage
-    alert(`Tu aventura comieza con el ${personaje}`); // Mensaje opcional para el usuario
+ alert(`Tu aventura comieza con el ${personaje}`); // Mensaje opcional para el usuario   
 }
 function agregar_palabra() {
     let input = document.getElementById('input-texto').value;
@@ -76,6 +76,21 @@ let $html = {
 // Variables globales
 let personajeSeleccionado = localStorage.getItem('personajeSeleccionado') || 'ELFO'; // Valor por defecto
 
+function ajustarEstiloPersonaje() {
+    let $elemento = $html.personaje;
+
+    // Ajustar tamaño y margen según el personaje seleccionado
+    if (personajeSeleccionado === 'ELFO') {
+        $elemento.style.width = '212px';
+        $elemento.style.margin = '54px -300px';
+    } else if (personajeSeleccionado === 'MAGO') {
+        $elemento.style.width = '260px';
+        $elemento.style.margin = '54px -317px';
+    } else if (personajeSeleccionado === 'ORCO') {
+        $elemento.style.width = '309px';
+        $elemento.style.margin = '58px -355px';
+    }
+}
 function dibujar(juego) {
     // Actualizar la imagen del personaje según el personaje seleccionado
     let $elemento = $html.personaje;
@@ -95,6 +110,7 @@ function dibujar(juego) {
         $elemento.src = './image/estado-orco/0' + estado + '.png'; // Cambia según la estructura de tus imágenes
     }
 
+    ajustarEstiloPersonaje();
     // Creamos las letras adivinadas
     let palabra = juego.palabra;
     let adivinado = juego.adivinado;
