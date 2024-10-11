@@ -1,7 +1,8 @@
 /* ;(function() { */
     /* 'use strict' */
-    
-let palabras = ['frodo', 'sauron', 'gandalf', 'aragon', 'elrond', 'legolas', 'galadriel', 'balrog',
+
+
+let palabras = JSON.parse(localStorage.getItem('palabras')) || ['frodo', 'sauron', 'gandalf', 'aragon', 'elrond', 'legolas', 'galadriel', 'balrog',
      'golum', 'gimli', 'bilbo', 'samsagaz', 'nazgul', 'boromir', 'eomer', 'faramir'];
 
 //agregar palabras a la lista
@@ -49,6 +50,7 @@ function agregar_palabra() {
 
     else {
         palabras.push(input)
+        localStorage.setItem('palabras', JSON.stringify(palabras));
         Swal.fire({
             icon: 'success',
             iconColor: '#4A5E60',
@@ -243,12 +245,12 @@ function palabra_aleatoria() {
 
 function alerta_ganado() {
     Swal.fire({
-        title: '¡Felicidades, ganaste!',
-        width: 380,
+        title: '¡Felicidades, salvaste la Tierra Media!',
+        width: 280,
         padding: '2rem',
         color: '#D9D9D9',
         background: '#4A5E60',
-        imageUrl: './image/ganaste.png',
+        imageUrl: './image/banderola_Gondor.png',
         imageHeight: 250,
         confirmButtonColor: '#192323',
         allowEnterKey: true,
