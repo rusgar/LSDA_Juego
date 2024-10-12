@@ -765,3 +765,45 @@ footer p:nth-child(5) {
     margin: 3px;
     font-size: 24px;
 }
+
+/* version movil*/
+
+/* Botones */
+.btn {
+    display: block; /* Hacer botones apilados */
+    width: 100%; /* Botones de ancho completo */
+    padding: 15px; /* Espacio interior */
+    margin-top: 10px; /* Espacio entre botones */
+    font-size: 16px; /* Tamaño de fuente */
+    background-color: #547C7E; /* Color de fondo */
+    color: #E3E0DE; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 30px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambiar cursor al pasar */
+    transition: background 0.3s; /* Efecto al pasar el cursor */
+}
+
+.btn:hover {
+    background-color: #4A5E60; /* Color de fondo al pasar el cursor */
+}
+
+input[type="text"] {
+    width: 100%; /* O un porcentaje adecuado */
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente legible */
+}
+.input-focused {
+    /* Cambia el diseño según sea necesario */
+    padding-bottom: 20px; /* Ejemplo de ajuste */
+}
+
+/* Ajustes específicos para pantallas más pequeñas */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Ajustar el tamaño de fuente */
+    }
+
+    .btn {
+        font-size: 14px; /* Ajustar el tamaño de fuente de los botones en pantallas pequeñas */
+    }
+}
