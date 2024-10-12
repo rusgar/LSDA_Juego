@@ -364,6 +364,7 @@ footer p:nth-child(5) {
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center; /* Agrega esto */
     text-align: center;
     width: 700px;
     height: 350px;
@@ -520,6 +521,7 @@ footer p:nth-child(5) {
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center; /* Agrega esto para centrar verticalmente */
     text-align: center;
     width: 1000px;
     height: 560px;
