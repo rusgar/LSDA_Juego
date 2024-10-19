@@ -275,15 +275,9 @@ function alerta_perdido(palabra) {
             rgba(115,115,115,0.6)`
     })
 }
-const inputField = document.querySelector('input[type="text"]');
 
-inputField.addEventListener('focus', () => {
-    document.body.classList.add('input-focused'); // Añade una clase para ajustar estilos
-});
 
-inputField.addEventListener('blur', () => {
-    document.body.classList.remove('input-focused'); // Elimina la clase cuando se pierde el enfoque
-});
+
 nuevoJuego()
 
 /* }()) */
